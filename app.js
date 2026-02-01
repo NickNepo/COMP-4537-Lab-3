@@ -64,6 +64,10 @@ class HttpServer{
         }
     }
     };
+    static send404(res, msg = "Not Found") {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end(msg);
+    }
 }
 
 HttpServer.start();
